@@ -1,0 +1,49 @@
+<html>
+<head>
+  <style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+    <script type="text/javascript" src="angular.js">
+
+    </script>
+    <script type="text/javascript" src="abc.js"></script>
+</head>
+<body>
+    <div ng-app="abcApp" ng-controller="abcCtrl">
+    <form method="post">
+        <p style="color:red;font-size:50px;">{{error}}</p>
+        <input type="text" placeholder="Title" style="font-size: 50px;" ng-model="title" ng-change="textChange()"><br><br>
+        <input type="text" placeholder="Details" style="font-size: 50px;" ng-model="details" ng-change="textChange()"><br><br>
+        <button style="font-size: 50px;" ng-click="submit()">Submit</button>
+    </form>
+    <div class="">
+      <table>
+  <tr>
+    <th>Title</th>
+    <th>Detail</th>
+    <th>Delete Blog</th>
+  </tr>
+  <tr ng-repeat="i in blogList">
+    <td>{{i.title}}</td>
+    <td>{{i.details}}</td>
+    <td><button type="button" ng-click="del($index)"> Delete</button> </td>
+  </tr>
+</table>
+    </div>
+    </div>
+</body>
+</html>
