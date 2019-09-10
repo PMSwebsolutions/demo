@@ -4,6 +4,9 @@ app.controller('abcCtrl', function($scope, $http) {
   $scope.title = "";
   $scope.details = "";
 
+
+// FOR VIEWING THE TABLE
+
   function view() {
     var config = {
       method : "POST",
@@ -25,8 +28,10 @@ app.controller('abcCtrl', function($scope, $http) {
 
   view();
 
+// END OF VIEWING TABLE
 
 
+// SUBMIT BUTTON FUNCTION
   $scope.submit = function () {
     if ($scope.title == "" || $scope.details == "") {
       $scope.error = "Please fill the following details.";
@@ -62,6 +67,10 @@ app.controller('abcCtrl', function($scope, $http) {
     }
   }
 
+  // END OF SUBMIT BUTTON
+
+
+// TO CHECK IF ANYTHING IS TYPED
 
   $scope.textChange = function () {
     if ($scope.title == "" || $scope.details == "") {
@@ -71,7 +80,10 @@ app.controller('abcCtrl', function($scope, $http) {
     }
   }
 
+// END OF ANYTHING IS TYPED
 
+
+// TO DELETE AN ITEM FROM TABLE
   $scope.del = function (index) {
     var id = $scope.blogList[index].id;
     var config = {
@@ -92,5 +104,5 @@ app.controller('abcCtrl', function($scope, $http) {
       alert("Try again later");
     });
   }
-
+//  END TO DELETE AN ITEM FROM TABLE
 });
